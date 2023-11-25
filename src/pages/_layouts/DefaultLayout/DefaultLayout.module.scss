@@ -1,0 +1,114 @@
+@import 'src/app/styles/vars';
+
+.DefaultLayout {
+  //@include grid-for(desktop-small);
+  position: relative;
+  //min-height: 100vh;
+  @include flex;
+  align-items: flex-start;
+
+  //@include tablet-down {
+  //  @include grid-for(tablet-large);
+  //}
+  //
+  //@include mobile-down {
+  //  @include grid-for(mobile-small);
+  //}
+}
+
+.DefaultLayout__sidebar {
+  position: sticky;
+  top: 16px;
+  width: 250px;
+  padding: 8px;
+  margin: 16px;
+  background-color: $color-background;
+  border: 1px solid rgba(#dbdbdb, 0.6);
+  border-radius: 12px;
+  height: 1000px;
+}
+
+.DefaultLayout__container {
+  @include flex-col-middle;
+  padding-right: 16px;
+  padding-left: 16px;
+  flex: 1;
+}
+
+.DefaultLayout__header {
+  width: 100%;
+  display: grid;
+  margin-bottom: $spacing-medium-x;
+  max-width: 900px;
+
+  @include mobile-up {
+    grid-template:
+      'mopus cp geekbrains'
+      / auto 1fr auto;
+    //grid-template:
+    //  'cp geekbrains'
+    //  / 1fr auto;
+    height: $header-height;
+    align-items: center;
+    column-gap: $spacing-medium;
+  }
+
+  @include mobile-down {
+    grid-template:
+      //'mopus cp'
+      'mopus geekbrains'
+      / 1fr auto;
+    align-items: center;
+    row-gap: $spacing-small-4x;
+    column-gap: 16px;
+  }
+}
+
+.DefaultLayout__logo {
+  width: auto;
+  height: 40px;
+}
+
+.DefaultLayout__logoMopusContainer {
+  border-radius: 0 0 $radius-large $radius-large;
+  background-color: $color-accent;
+  padding: $spacing-small-2x;
+  margin-right: auto;
+  grid-area: mopus;
+  height: $header-height;
+}
+
+.DefaultLayout__logo_mopus {
+  width: auto;
+  height: 100%;
+}
+
+.DefaultLayout__logo_cp {
+  grid-area: cp;
+
+  @include mobile-up {
+    justify-self: end;
+  }
+
+  @include mobile-down {
+    height: 24px;
+    align-self: end;
+    display: none;
+  }
+}
+
+.DefaultLayout__logo_geekbrains {
+  height: 24px;
+  grid-area: geekbrains;
+
+  @include mobile-down {
+    max-width: 100%;
+    height: 24px;
+  }
+}
+
+.DefaultLayout__content {
+  width: 100%;
+  height: 100%;
+  max-width: 900px;
+}

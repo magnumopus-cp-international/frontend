@@ -1,0 +1,19 @@
+@import 'src/app/styles/vars';
+
+.HomePage {
+  @include flex-col;
+  padding-bottom: $spacing-medium-x;
+  height: 100%;
+}
+
+.HomePage__heading {
+  font-weight: $font-weight-medium;
+}
+
+.HomePage__history {
+  @include flex-col;
+  row-gap: 16px;
+}
+
+.NewPage__newButton {
+}

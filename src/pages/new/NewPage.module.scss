@@ -1,0 +1,150 @@
+@import 'src/app/styles/vars';
+
+$textarea-height: 192px;
+
+.NewPage {
+  @include flex-col;
+  padding-bottom: $spacing-medium-x;
+  height: 100%;
+}
+
+.NewPage__heading {
+  margin-bottom: $spacing-small-x;
+  font-weight: $font-weight-medium;
+}
+
+.NewPage__box {
+  @include flex-col;
+  background-color: $color-background-dark-100;
+  border-radius: $radius-large;
+  padding: $spacing-medium;
+  margin-bottom: 40px;
+
+  @include mobile-down {
+    padding: 0;
+    background-color: transparent;
+  }
+}
+
+.NewPage__dropBox {
+  @include flex-col;
+  position: relative;
+}
+
+.NewPage__dropBoxPlaceholder {
+  position: absolute;
+  top: -$spacing-medium;
+  left: -$spacing-medium;
+  width: calc(100% + $spacing-medium * 2);
+  height: calc(100% + $spacing-medium * 2);
+  visibility: hidden;
+  background-color: rgba($color-background-accent, 0.6);
+  border-radius: $radius-small;
+  display: flex;
+}
+
+.NewPage__dropBoxPlaceholderIcon {
+  width: 144px;
+  height: 144px;
+  color: $color-background-primary;
+  margin: auto;
+}
+
+.NewPage__dropBox_hidden {
+  .NewPage__dropBoxPlaceholder {
+    visibility: visible;
+  }
+}
+
+.NewPage__submitButton {
+  width: 100%;
+
+  @include mobile-up {
+    margin-left: auto;
+    width: fit-content;
+    min-width: 200px;
+  }
+}
+
+.NewPage__buttonHint {
+  color: $color-text-tertiary;
+}
+
+.NewPage__divider {
+  margin: $spacing-small 0;
+}
+
+.NewPage__textarea, .NewPage__filesContainer {
+  width: 100%;
+  margin-bottom: $spacing-small-3x;
+  min-height: 100px;
+}
+
+.NewPage__textareaInput {
+  min-height: 160px;
+}
+
+.NewPage__filesContainer {
+  @include flex-center;
+  position: relative;
+  flex-wrap: wrap;
+  gap: $spacing-small-x;
+  border: 1px solid $color-border-default;
+  border-radius: $radius-small;
+  background-color: $color-background-primary;
+  padding: $spacing-small-x;
+
+  @include mobile-down {
+    justify-content: center;
+  }
+
+  &_hidden {
+    visibility: hidden;
+    opacity: 0;
+    min-height: 0 !important;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+}
+
+.NewPage__filesContainerPlaceholder {
+  color: $color-text-secondary;
+}
+
+.NewPage__uploadContainer {
+  width: fit-content;
+}
+
+.NewPage__uploadButton {
+  min-height: 40px;
+}
+
+.NewPage__uploadHint {
+  color: $color-text-tertiary;
+  margin-bottom: $spacing-small-3x;
+}
+
+.NewPage__orHint {
+  margin-bottom: $spacing-small-3x;
+  letter-spacing: 0.06rem;
+}
+
+.NewPage__loaderContainer {
+  @include flex-col-middle;
+  justify-content: center;
+  row-gap: $spacing-small-4x;
+  height: 100%;
+}
+
+.NewPage__loader {
+  --loader-size: 96px;
+  color: $color-background-secondary !important;
+}
+
+.NewPage__loaderText {
+  @include text-programming-code-regular;
+  font-size: $font-size-16;
+}

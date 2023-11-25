@@ -1,0 +1,61 @@
+@import 'src/app/styles/vars';
+
+.LessonCard {
+  @include link-reset;
+  @include transition(box-shadow);
+
+  padding: 16px 24px;
+  border-radius: 8px;
+  border: 1px solid #dbdbdb;
+  background-color: #f2f2f2;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: $shadow-hover;
+    color: $color-text-primary !important;
+
+    .LessonCard__name:not(.LessonCard__name_empty) {
+      color: $color-brand-hover;
+    }
+  }
+
+  &:active {
+    .LessonCard__name:not(.LessonCard__name_empty) {
+      color: $color-brand-active;
+    }
+  }
+}
+
+.LessonCard__head {
+  @include flex-middle;
+  column-gap: 8px;
+  margin-bottom: 4px;
+}
+
+.LessonCard__id {
+  color: $color-text-tertiary;
+}
+
+.LessonCard__name {
+  @include transition(color);
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+}
+
+.LessonCard__name_empty {
+  color: $color-text-secondary;
+}
+
+.LessonCard__sentence {
+  background: rgba(yellow, 0.5);
+}
+
+.LessonCard__badge {
+  @include text-caption-s-regular;
+  padding: 0 8px;
+  background-color: $color-background-dark-300;
+  color: $color-text-tertiary;
+  border-radius: 4px;
+}

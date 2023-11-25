@@ -1,0 +1,96 @@
+@import 'src/app/styles/vars';
+
+.Attachment {
+  @include flex-middle;
+  width: 100%;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  height: fit-content;
+  padding: 16px 24px;
+  background-color: $color-background-primary;
+  margin-bottom: 8px;
+
+  @include mobile-down {
+    @include flex-col;
+    padding: 16px 16px;
+    row-gap: 8px;
+    //flex-wrap: wrap;
+  }
+}
+
+.Attachment__text {
+  @include text-body-s-regular;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;
+  margin-right: 16px;
+
+  @include mobile-down {
+    max-width: 200px;
+  }
+}
+
+.Attachment__meta {
+  @include text-caption-s-regular;
+  color: $color-text-tertiary;
+  margin-right: 16px;
+  white-space: nowrap;
+
+  &_first {
+    flex: 1;
+    text-align: right;
+  }
+}
+
+.Attachment__text_hidden {
+  opacity: 0;
+}
+
+.Attachment__text_x {
+  top: -$line-height-16 / 2;
+  font-size: 16px;
+  line-height: 0;
+  overflow: visible;
+}
+
+.Attachment__progress {
+  @include text-caption-m-medium;
+  margin-right: 16px;
+
+  @include mobile-up {
+    margin-left: auto;
+  }
+}
+
+.Attachment__cross {
+  @include transition(opacity);
+  position: relative;
+  top: -2px;
+  font-size: 24px;
+  line-height: 0;
+  padding: 16px;
+  margin: -16px;
+  text-align: right;
+  cursor: pointer;
+  opacity: 0.6;
+  margin-left: auto;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.Attachment__icon {
+  width: 32px;
+  height: auto;
+  margin-right: 12px;
+}
+
+.Attachment__row {
+  @include flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+}

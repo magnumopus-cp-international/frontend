@@ -1,0 +1,19 @@
+@import 'src/app/styles/vars';
+
+.SearchPage {
+  padding-bottom: 40px;
+}
+
+.SearchPage__heading {
+  font-weight: $font-weight-medium;
+  margin-bottom: 24px;
+}
+
+.SearchPage__input {
+  margin-bottom: 32px;
+}
+
+.SearchPage__list {
+  @include flex-col;
+  row-gap: 24px;
+}

@@ -1,0 +1,9 @@
+@import 'src/app/styles/vars';
+
+.BatchedText {
+  line-height: $line-height-24;
+}
+
+.BatchedText__typist {
+  display: inline;
+}

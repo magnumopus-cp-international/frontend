@@ -1,0 +1,9 @@
+@import 'src/app/styles/vars';
+
+.LiveText {
+  line-height: $line-height-24;
+}
+
+.LiveText__typist {
+  display: inline;
+}

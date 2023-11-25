@@ -1,0 +1,17 @@
+@import 'src/app/styles/vars';
+
+.LessonEntry {
+  line-height: 24px;
+
+  &:not(:last-of-type) {
+    margin-bottom: 16px;
+  }
+}
+
+.LessonEntry__name {
+  font-weight: $font-weight-semibold;
+
+  &:not(:hover) {
+    color: $color-text-primary;
+  }
+}

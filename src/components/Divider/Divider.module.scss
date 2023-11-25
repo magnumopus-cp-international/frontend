@@ -1,0 +1,25 @@
+@import 'src/app/styles/vars';
+
+.Divider {
+  margin: 0;
+  border: 0;
+  background-color: $color-divider-dark;
+}
+
+.Divider_variant_horizontal {
+  width: 100%;
+  height: 1px;
+}
+
+.Divider_variant_vertical {
+  width: 1px;
+  height: auto;
+}
+
+.Divider_color_light {
+  background-color: $color-background-secondary;
+}
+
+.Divider_color_dark {
+  background-color: $color-divider-dark;
+}

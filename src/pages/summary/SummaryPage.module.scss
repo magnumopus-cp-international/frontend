@@ -1,0 +1,127 @@
+@import 'src/app/styles/vars';
+
+.SummaryPage {
+  @include flex-col;
+  padding: 0 0 $spacing-medium-x;
+  height: 100%;
+
+  [data-match-type] {
+    &[data-match-type="entry"] {
+      @include transition(color);
+      position: relative;
+      background: #dedede;
+      animation: none;
+
+      &[data-active="true"] {
+        z-index: 1;
+        background: rgba(yellow, 0.6);
+        animation: highlight 0.5s;
+        animation-iteration-count: 1;
+      }
+    }
+  }
+}
+
+@keyframes highlight {
+  from {
+    background: rgba(yellow, 0.5);
+    margin: 0;
+    padding: 0;
+  }
+  20% {
+    background: rgba(yellow, 0.8);
+    padding: 4px;
+    margin: -4px;
+  }
+  to {
+    background: rgba(yellow, 0.5);
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.SummaryPage__heading {
+  font-weight: $font-weight-medium;
+  margin-bottom: 16px;
+}
+
+.SummaryPage__title {
+  min-height: 40px;
+  font-weight: $font-weight-medium;
+  margin-bottom: 32px;
+
+  > div {
+    margin-top: 10px;
+  }
+}
+
+.SummaryPage__text {
+  line-height: $line-height-24;
+}
+
+.SummaryPage__estimated {
+  @include flex-center;
+  column-gap: 8px;
+  text-align: center;
+  color: $color-text-secondary;
+
+  svg {
+    color: $color-text-secondary;
+  }
+}
+
+.SummaryPage__glossaryLiveText {
+  white-space: pre-line;
+}
+
+.SummaryPage__block {
+  margin-bottom: 32px;
+}
+
+.SummaryPage__typist {
+  display: inline;
+}
+
+.SummaryPage__audio {
+  margin-bottom: 16px;
+
+  audio {
+    width: 100%;
+  }
+
+  p {
+    padding-left: 12px;
+    margin-bottom: 4px;
+    color: $color-text-secondary;
+  }
+}
+
+.SummaryPage__audio_empty {
+  p {
+    padding-left: 0;
+  }
+}
+
+.SummaryPage__download {
+  text-align: left;
+}
+
+.SummaryPage__downloadPlaceholder {
+  color: $color-text-secondary;
+}
+
+.SummaryPage__search {
+  margin-bottom: 16px;
+  height: 40px !important;
+
+  input {
+    font-size: 14px !important;
+  }
+}
+
+.SummaryPage__resetSearch {
+  display: inline-block;
+  text-align: left;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
